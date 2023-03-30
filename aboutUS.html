@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" >
+    <script src="script.js"></script>
+    <script src="footer.js"></script>
+    <script src="header.js"></script>
+</head>
+<body>
+    <div class="header">
+        <div class="inner_header">
+            <div class = logo_container>
+                <img src="assets/logo-black.png">
+                <input id="inputSearch" type="text" placeholder="Search for" onchange=changeSearch()>
+            </div>
+            <img src="assets/usericon.png" onclick="SignUser()">
+            <ul class="navigation">
+                <a href="home.html"><li>home</li></a>
+                <a href="#"><li onclick="LoginWindow()">login</li></a>
+                <a href="#"><li onclick="ContactWindow()">contact</li></a>
+                <a href="#"><li onclick="getFeedback()" id="feedback">feedback</li></a>
+                <div class="shopBasket">
+                    <img src="assets/basket.png">
+                    <a href="#"><li id="prize">0.00€</li></a>
+                </div>
+            </ul>
+        </div>
+    </div>
+    
+    <div class="bodyMiddleText">
+        <h1>About Us</h1>
+        <br>
+        The AZooShop company spreads joy among households
+         pets and their breeders through a network of stores
+         with ZooShop breeding supplies. The first Pet Center store
+         was established in 2022 in Trenčín and since then
+         our retail and wholesale network is still growing.
+         <br><br>
+         Our goal is to accompany you, our customers, through the entire life cycle
+         your pets, from the moment you decide to get one
+         from a pet to other care, so that you get the most
+         enjoy the joys of life together with your pet. It is also related to
+         development of cooperation with VETINO and veterinary clinics
+         Jaggy. At the same time, you will also find a salon for dogs.
+
+        <br><br>
+        <div class="members">
+            <img src="assets/manazer.jpg" alt="">
+            <u><h2>CEO</h2></u>
+        </div>
+        
+    </div>
+</body>
+
+<footer>
+    <div class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="footer-col">
+                    <h4>Contact</h4>
+                    <ul>
+                        <li><h5>Jesenského 5, Trenčín</h5></li>
+                        <li><h5>+421 904 555 777</h5></li>
+                        <li><h5>AZooShop@gmail.com</h5></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Information</h4>
+                    <ul>
+                        <li onclick="LoginWindow()"><a href="#">Login</a></li>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="aboutUs.html">About us</a></li>   
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Customer service</h4>
+                    <ul>
+                        <li><a href="#">Business conditions</a></li>
+                        <li><a href="#">Complaints</a></li>
+                        <li><a href="#">Privacy</a></li>
+                        <li><a href="#">Terms of Delivery</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Follow  us</h4>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+</div>
+</footer>
+</html>

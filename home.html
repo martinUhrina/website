@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AZooShop</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" >
+    <script src="script.js"></script>
+    <script src="footer.js"></script>
+    <script src="header.js"></script>
+</head>
+<body>
+    
+    <div class="header">
+        <div class="inner_header">
+            <div class = logo_container>
+                <img src="assets/logo-black.png">
+                <input id="inputSearch" type="text" placeholder="Search for" onchange=changeSearch()>
+            </div>
+            <img src="assets/usericon.png" onclick="SignUser()">
+            <ul class="navigation">
+                <a href="#"><li>home</li></a>
+                <a href="#"><li onclick="LoginWindow()">login</li></a>
+                <a href="#"><li onclick="ContactWindow()">contact</li></a>
+                <a href="#"><li onclick="getFeedback()" id="feedback">feedback</li></a>
+                <div class="shopBasket">
+                    <img src="assets/basket.png">
+                    <a href="#"><li id="prize">0.00€</li></a>
+                </div>
+            </ul>
+        </div>
+    </div>
+    <div class="body-nav">
+        <nav>
+            <ul>
+                <li><a href="#">
+                    <i class="fa-solid fa-paw"></i>
+                    <span class="nav-item">HOME</span>
+                </a></li>
+                <li><a href="#" onclick=choiceDog()>
+                    <i class="fa-solid fa-dog"></i>
+                    <span class="nav-item">DOGS</span>
+                </a></li>
+                <li><a href="#">
+                    <i class="fa-solid fa-cat"></i>
+                    <span class="nav-item">CATS</span>
+                </a></li>
+                <li><a href="#">
+                    <i class="fa-solid fa-fish"></i>
+                    <span class="nav-item">AQUACULTURE</span>
+                </a></li>
+            </ul>
+        </nav>
+    </div>
+    <div class="body-middle">
+        <div class="item">
+            <img id="pics" src="assets/22863.png" alt="">
+            <div class="item_text">    
+                <div class="name_text">
+                    <i id="name">Clicker</i>
+                </div>
+                <div class="prize_text">
+                    <i id="prize">3.48$</i>
+                </div>
+                <button onclick="addToCart(3.48)">Add to cart</button>
+            </div>
+        </div>
+        <div class="item">
+            <img id="pics" src="assets/puller.png" alt="">
+            <div class="item_text">    
+                <div class="name_text">
+                    <i id="name">Puller</i>
+                </div>
+                <div class="prize_text">
+                    <i id="prize">28.68$</i>
+                </div>
+                <button onclick="addToCart(28.68)">Add to cart</button>
+            </div>
+        </div>
+        <div class="item">
+            <img id="pics" src="assets/puller.png" alt="">
+            <div class="item_text">    
+                <div class="name_text">
+                    <i id="name">Puller</i>
+                </div>
+                <div class="prize_text">
+                    <i id="prize">28.68$</i>
+                </div>
+                <button onclick="addToCart(28.68)">Add to cart</button>
+            </div>
+        </div>
+    </div>
+        <div class="popup">
+            <div class="popup-content">
+                <img src="assets/logo-black.png" alt="Close"class="close" onclick="closeWindowFeedback()">
+                <!--posielanie emamilu-->
+                <form action="https://formsubmit.co/uhrina@stud.uniza.sk" method="POST">
+                    <h3>Give your feedback</h3>
+                    <input type="text" placeholder="Name">
+                    <input type="email" placeholder="Email">
+                    <textarea cols="20" rows="8" placeholder="Your message"></textarea>
+                    <button href="#" class="buttonSend">Send</button>
+                </form>
+                
+            </div>
+        </div>
+        <div class ="popupContact">
+            <div class="popup-content"   id="popupContact">
+                <img src="assets/logo-black.png" alt="Close"class="close" onclick="ContactWindow()">
+                <!--posielanie emamilu-->
+                <form>
+                    <h3>+421 904 555 777</h3>
+                    <h3>Jesenského 5, Trenčín</h3>
+                    <h3>AZooShop@gmail.com</h3>
+                    <button href="#" class="buttonSend" onclick="ContactWindow()">Back</button>
+                </form>
+            </div>
+        </div>
+        <div class ="popupSignUser">
+            <div class="popup-content"   id="popupSignUser">
+                <img src="assets/logo-black.png" alt="Close"class="close" onclick="SignUser()">
+                <!--posielanie emamilu-->
+                <form>
+                    <img src="assets/usericon.png">
+                    <h3>USER LOGGED IN AS</h3>
+                    <h3 id="textLoggedUser">You are not logged in</h3>
+                    <button href="#" class="buttonSend" onclick="SignUser()">Back</button>
+                </form>
+            </div>
+        </div>
+        <div class ="popupLogin">
+            <div class="popup-content">
+                <div class="center">
+                    <img src="assets/logo-black.png" alt="Close"class="close" onclick="LoginWindow()">
+                    <h3>Login</h3>
+                    <form>
+                        <div class = "text_field">
+                            <input type="text" placeholder="Username" id="usernameValue" required>
+                        </div>
+                        <div class = "text_field">
+                            <input type="password" placeholder="Password" id="passwordValue" required>
+                        </div>
+                        <div class="pas">Forgot password?</div>
+                        <div class="inputButton">
+                            <input type="submit" value="Login" onclick = "isUser()">
+                        </div>
+                        <div class="signup_link">Not a membere? <a href = "#" onclick="windowSignIn()">Sign in?</a></div>
+                    </form>
+                </div>
+            </div>
+
+                <div class="popup-content-sign-up">
+                <div class="center">
+                    <img src="assets/logo-black.png" alt="Close"class="close" onclick="SignInWindow()">
+                    <h3>Sign in</h3>
+                    <form>
+                        <div class = "text_field">
+                            <input type="text" placeholder="New Username" id="newUserName" required>
+                        </div>
+                        <div class = "text_field">
+                            <input type="password" placeholder="Password" id="newPassword" required>
+                        </div>
+                        <div class = "text_field">
+                            <input type="password" placeholder="Confirm password"  required>
+                        </div>
+                        <div class="inputButton">
+                            <input type="submit" value="Sign in" onclick = "signIn()">
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+    
+    
+</body>
+<footer>
+    <div class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="footer-col">
+                    <h4>Contact</h4>
+                    <ul>
+                        <li><h5>Jesenského 5, Trenčín</h5></li>
+                        <li><h5>+421 904 555 777</h5></li>
+                        <li><h5>AZooShop@gmail.com</h5></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Information</h4>
+                    <ul>
+                        <li onclick="LoginWindow()"><a href="#">Login</a></li>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="aboutUs.html">About us</a></li>   
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Customer service</h4>
+                    <ul>
+                        <li><a href="#">Business conditions</a></li>
+                        <li><a href="#">Complaints</a></li>
+                        <li><a href="#">Privacy</a></li>
+                        <li><a href="#">Terms of Delivery</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Follow  us</h4>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+</div>
+</footer>
+</html>
