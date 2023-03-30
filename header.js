@@ -35,6 +35,37 @@ function isUser(){
     alert("nepodarilo sa prihlasit");
 }
 
+function windowSignIn(){
+    if(document.querySelector(".popup-content-sign-up").style.display == "none") {
+        console.log("bbb")
+        document.querySelector(".popup-content-sign-up").style.display = "block";
+        document.querySelector(".popup-content-login").style.display = "none";
+    }
+    else{
+        console.log("aa")
+        document.querySelector(".popup-content-sign-up").style.display = "none";
+        document.querySelector(".popup-content-login").style.display = "block";
+    }
+    
+}
+
+function createNewUser(){
+    var name = document.getElementById("newUserName").value;
+    var password = document.getElementById("newPassword").value;
+    var confirmPassword = document.getElementById("confirmPassword").value;
+    if(password == confirmPassword){
+        users.push(new user(name,password));
+        document.getElementById("newUserName").value = "";
+        document.getElementById("newPassword").value = "";
+        document.getElementById("confirmPassword").value = "";
+        windowSignIn();
+        alert("New user was succesfully creted: " + name);
+    }
+    else{
+        alert("Password is not compare with confirm password");
+    }
+
+}
 
 function SignUser(){
     if(!this.signUpUser){
@@ -77,12 +108,6 @@ function LoginWindow(){
     
 }
 
-function windowSignIn(){
-    console.log("pp");
-    
-    document.querySelector(".popup-content-sign-up").style.display = "block";
-    document.querySelector(".popup-content").style.display = "none";
-}
 
 function signIn(){
     document.querySelector(".popup-content-sign-up").style.display = "none";
